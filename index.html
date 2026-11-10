@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>دار الفنون | للدعاية والإعلان</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+:root {
+  --bg: #111111;
+  --card: #1b1b1b;
+  --text: #ffffff;
+  --muted: #b9b9b9;
+  --gold: #c9a45c;
+  --orange: #f07832;
+  --navy: #173b65;
+  --border: rgba(201,164,92,.25);
+}
+
+body.light {
+  --bg: #f5f2ec;
+  --card: #ffffff;
+  --text: #202020;
+  --muted: #666666;
+  --border: rgba(0,0,0,.12);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Cairo', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  transition: .3s;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+}
+
+.navbar {
+  min-height: 85px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.brand-name {
+  font-size: 28px;
+  font-weight: 900;
+  white-space: nowrap;
+}
+
+.brand-name span:first-child {
+  color: var(--navy);
+}
+
+.brand-name span:last-child {
+  color: var(--orange);
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+nav a {
+  font-size: 14px;
+  color: var(--text);
+  transition: .3s;
+}
+
+nav a:hover {
+  color: var(--gold);
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.icon-btn {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 9px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.main-button {
+  display: inline-block;
+  padding: 12px 25px;
+  border-radius: 8px;
+  background: var(--orange);
+  color: white;
+  font-weight: 700;
+  transition: .3s;
+}
+
+.main-button:hover {
+  background: var(--gold);
+  transform: translateY(-3px);
+}
+
+.gold-button {
+  background: var(--gold);
+  color: #171717;
+}
+
+.hero {
+  min-height: 570px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  background:
+    radial-gradient(ellipse at center, rgba(201,164,92,.12), transparent 65%);
+}
+
+.hero-content {
+  max-width: 850px;
+  margin: auto;
+  padding: 90px 15px;
+}
+
+.hero-logo {
+  width: 400px;
+  height: 400px;
+  object-fit: contain;
+  margin-bottom: 25px;
+  border-radius: 15px;
+}
+
+.hero h1 {
+  font-size: clamp(30px, 5vw, 52px);
+  line-height: 1.5;
+  margin-bottom: 18px;
+}
+
+.hero h1 span {
+  color: var(--gold);
+}
+
+.hero p {
+  color: var(--muted);
+  font-size: 17px;
+  line-height: 2;
+  margin-bottom: 30px;
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+section {
+  padding: 85px 0;
+}
+
+.section-heading {
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+.section-heading h2 {
+  font-size: 32px;
+  margin-bottom: 12px;
+}
+
+.section-heading h2 span {
+  color: var(--gold);
+}
+
+.section-heading p {
+  color: var(--muted);
+}
+
+.about-box {
+  max-width: 900px;
+  margin: auto;
+  text-align: center;
+  background: var(--card);
+  border: 1px solid var(--border);
+  padding: 40px;
+  border-radius: 16px;
+  line-height: 2.2;
+}
+
+.about-box h3 {
+  color: var(--gold);
+  margin-bottom: 15px;
+  font-size: 25px;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 20px;
+}
+
+.service-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 30px 20px;
+  text-align: center;
+  transition: .3s;
+}
+
+.service-card:hover {
+  transform: translateY(-7px);
+  border-color: var(--gold);
+}
+
+.service-card i {
+  color: var(--gold);
+  font-size: 35px;
+  margin-bottom: 18px;
+}
+
+.service-card h3 {
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+@media(max-width: 800px) {
+  .navbar {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 15px 0;
+  }
+
+  nav {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  nav a {
+    font-size: 12px;
+  }
+
+  .hero {
+    min-height: 480px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="container navbar">
+
+    <a href="#home" class="brand-name">
+      <span>دار</span> <span>الفنون</span>
+    </a>
+
+    <nav>
+      <a href="#home">الرئيسية</a>
+      <a href="#about">من نحن</a>
+      <a href="#services">خدماتنا</a>
+      <a href="#gallery">أعمالنا</a>
+      <a href="#contact">تواصل معنا</a>
+    </nav>
+
+    <div class="nav-actions">
+      <button class="icon-btn" onclick="toggleLanguage()">AR / EN</button>
+      <button class="icon-btn" onclick="toggleTheme()" aria-label="تغيير الوضع">
+        <i class="fas fa-moon"></i>
+      </button>
+      <a href="#contact" class="main-button">اطلب خدمتنا</a>
+    </div>
+
+  </div>
+</header>
+
+<main>
+
+<section class="hero" id="home">
+  <div class="container hero-content">
+
+    <video class="logo-video" autoplay muted loop playsinline>
+    <source src="WhatsApp Video 2026-11-09 at 10.36.06 PM.mp4" type="video/mp4">
+</video>
+      
+  
+    >
+
+    <h1>نحوّل أفكارك إلى <span>إبداع يُرى</span></h1>
+
+    <p>
+      في دار الفنون نصنع حلول الدعاية والإعلان والطباعة واللوحات
+      بتصميمات مميزة وجودة تهتم بأدق التفاصيل.
+    </p>
+
+    <div class="hero-buttons">
+      <a href="#gallery" class="main-button">شاهد أعمالنا</a>
+      <a href="#services" class="main-button gold-button">اكتشف خدماتنا</a>
+    </div>
+
+  </div>
+</section>
+
+<section id="about">
+  <div class="container">
+
+    <div class="section-heading">
+      <h2>حكايتنا، <span>الإبداع يبدأ من هنا</span></h2>
+      <p>نؤمن أن كل فكرة تستحق أن تظهر بأفضل صورة.</p>
+    </div>
+
+    <div class="about-box">
+      <h3>دار الفنون للدعاية والإعلان</h3>
+      <p>
+        وكالة دار الفنون للدعاية والإعلان تقدم مجموعة متكاملة
+        من خدمات الدعاية والإعلان والطباعة واللوحات والمجسمات
+        لنساعدك في إبراز علامتك التجارية بأفكار متميزة ومبتكرة
+        وتنفيذ مميز.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<section id="services">
+  <div class="container">
+
+    <div class="section-heading">
+      <h2>خدماتنا <span>الإبداعية</span></h2>
+      <p>كل ما تحتاجه لهوية إعلانية مميزة في مكان واحد.</p>
+    </div>
+
+    <div class="services-grid">
+
+      <div class="service-card">
+        <i class="fas fa-bullhorn"></i>
+        <h3>خدمات دعاية وإعلان شاملة</h3>
+      </div>
+
+      <div class="service-card">
+        <i class="fas fa-print"></i>
+        <h3>طباعة بنر، فلكس، استيكر، حرير، كانفس</h3>
+      </div>
+
+      <div class="service-card">
+        <i class="fas fa-crosshairs"></i>
+        <h3>قص ليزر أسماء وعمل مجسمات</h3>
+      </div>
+
+      <div class="service-card">
+        <i class="fas fa-award"></i>
+        <h3>عمل دروع أكريليك</h3>
+      </div>
+
+      <div class="service-card">
+        <i class="fas fa-lightbulb"></i>
+        <h3>عمل حروف مضيئة</h3>
+      </div>
+
+      <div class="service-card">
+        <i class="fas fa-cubes"></i>
+        <h3>استانلس، زنكور، فلين، بلاستيك</h3>
+      </div>
+
+      <div class="service-card">
+        <i class="fas fa-images"></i>
+        <h3>عمل جميع أنواع التابلوهات الكلاسيك والمودرن</h3>
+      </div>
+
+    </div>
+  </div>
+</section>
+<section id="gallery">
+  <div class="container">
+
+    <div class="section-heading">
+      <h2>من أعمالنا، <span>إبداعات تستحق المشاهدة</span></h2>
+      <p>مجموعة من الأعمال التي نفخر بتقديمها.</p>
+    </div>
+
+    <div class="gallery-grid">
+
+      <img src="WhatsApp Image 2026-11-05 at 9.19.18 PM (5).jpeg" alt="من أعمال دار الفنون">
+      <img src="WhatsApp Image 2026-11-05 at 9.19.18 PM.jpeg" alt="من أعمال دار الفنون">
+      <img src="WhatsApp Image 2026-11-05 at 9.19.19 PM (1).jpeg" alt="من أعمال دار الفنون">
+      <img src="WhatsApp Image 2026-11-05 at 9.19.19 PM (4).jpeg" alt="من أعمال دار الفنون">
+      <img src="WhatsApp Image 2026-11-05 at 9.19.20 PM.jpeg" alt="من أعمال دار الفنون">
+      <img src="WhatsApp Image 2026-11-05 at 9.19.20 PM (3).jpeg" alt="من أعمال دار الفنون">
+      <img src="WhatsApp Image 2026-11-05 at 9.19.21 PM.jpeg" alt="من أعمال دار الفنون">
+      <img src="WhatsApp Image 2026-11-05 at 9.19.21 PM (1).jpeg" alt="من أعمال دار الفنون">
+      <img src="WhatsApp Image 2026-11-05 at 9.19.21 PM (2).jpeg" alt="من أعمال دار الفنون">
+      <img src="WhatsApp Image 2026-11-05 at 9.19.21 PM (5).jpeg" alt="من أعمال دار الفنون">
+      <img src="WhatsApp Image 2026-11-05 at 9.19.21 PM (4).jpeg" alt="من أعمال دار الفنون">
+      <img src="WhatsApp Image 2026-11-05 at 9.19.22 PM (1).jpeg" alt="من أعمال دار الفنون">
+      <img src="WhatsApp Image 2026-11-05 at 9.19.22 PM (2).jpeg" alt="من أعمال دار الفنون">
+      <img src="WhatsApp Image 2026-11-05 at 9.19.22 PM (3).jpeg" alt="من أعمال دار الفنون">
+      <img src="WhatsApp Image 2026-11-05 at 9.19.22 PM (4).jpeg" alt="من أعمال دار الفنون">
+      <img src="WhatsApp Image 2026-11-05 at 9.19.22 PM (5).jpeg" alt="من أعمال دار الفنون">
+      <img src="WhatsApp Image 2026-11-05 at 9.19.23 PM - Copy.jpeg" alt="من أعمال دار الفنون">
+<div class="gallery-item">
+    <img src="WhatsApp Image 2026-11-05 at 9.19.19 PM (6).jpeg" alt="عمل من أعمال دار الفنون">
+</div>
+
+<div class="gallery-item">
+    <img src="WhatsApp Image 2026-11-05 at 9.19.22 PM (6).jpeg" alt="عمل من أعمال دار الفنون">
+</div>
+
+<div class="gallery-item">
+    <img src="WhatsApp Image 2026-11-05 at 9.19.23 PM (1).jpeg" alt="عمل من أعمال دار الفنون">
+</div>
+    </div>
+  </div>
+</section>
+
+<style>
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  cursor: pointer;
+  transition: .3s;
+}
+
+.gallery-grid img:hover {
+  transform: translateY(-5px);
+  border-color: var(--gold);
+}
+
+/* تكبير الصورة عند الضغط */
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 3000;
+  background: rgba(0,0,0,.92);
+  justify-content: center;
+  align-items: center;
+  padding: 25px;
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 85vh;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  left: 25px;
+  color: white;
+  font-size: 38px;
+  cursor: pointer;
+}
+
+.contact-intro {
+  text-align: center;
+  color: var(--muted);
+  margin-bottom: 30px;
+  line-height: 2;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 18px;
+}
+
+.contact-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  padding: 25px 15px;
+  text-align: center;
+  border-radius: 13px;
+  transition: .3s;
+}
+
+.contact-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--gold);
+}
+
+.contact-card i {
+  display: block;
+  font-size: 32px;
+  color: var(--gold);
+  margin-bottom: 12px;
+}
+
+.contact-card h3 {
+  font-size: 16px;
+}
+
+footer {
+  background: #090909;
+  color: #eee;
+  text-align: center;
+  padding: 35px 15px;
+  line-height: 2.2;
+  border-top: 1px solid var(--border);
+}
+
+footer .footer-brand {
+  color: var(--gold);
+  font-size: 23px;
+  font-weight: 800;
+}
+
+.whatsapp-float {
+  position: fixed;
+  bottom: 22px;
+  left: 22px;
+  z-index: 2000;
+  background: #25d366;
+  color: white;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  box-shadow: 0 4px 15px rgba(0,0,0,.3);
+}
+
+#contact {
+  padding-bottom: 100px;
+}
+</style>
+
+<section id="contact">
+  <div class="container">
+
+    <div class="section-heading">
+      <h2>يسعدنا <span>تواصلك</span></h2>
+      <p>خلينا ننفذ فكرتك مع بعض. تواصل معنا وابدأ مشروعك الإعلاني بخطوة.</p>
+    </div>
+
+    <p class="contact-intro">
+      دار الفنون للدعاية والإعلان، نحن هنا لمساعدتك في تحويل أفكارك إلى واقع.
+    </p>
+
+    <div class="contact-grid">
+
+      <a class="contact-card" href="https://wa.me/966553860799" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+        <h3>واتساب</h3>
+        <p>0553860799</p>
+      </a>
+
+      <a class="contact-card" href="tel:0552699507">
+        <i class="fas fa-phone"></i>
+        <h3>اتصل بنا</h3>
+        <p>0552699507</p>
+      </a>
+
+      <a class="contact-card" href="https://www.facebook.com/share/1E8FJCxF18/" target="_blank">
+        <i class="fab fa-facebook"></i>
+        <h3>فيسبوك</h3>
+      </a>
+
+      <a class="contact-card" href="https://www.instagram.com/darfnoon?igsh=MXh4OGQ5Ym96amx0eQ==" target="_blank">
+        <i class="fab fa-instagram"></i>
+        <h3>إنستجرام</h3>
+      </a>
+
+      <a class="contact-card" href="https://www.snapchat.com/add/darelfnoon" target="_blank">
+        <i class="fab fa-snapchat"></i>
+        <h3>سناب شات</h3>
+      </a>
+
+      <a class="contact-card" href="https://share.google/6O8YEw0pcJ91w9nPw" target="_blank">
+        <i class="fas fa-globe"></i>
+        <h3>موقعنا</h3>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <span class="lightbox-close">&times;</span>
+  <img id="lightbox-image" src="" alt="صورة مكبرة">
+</div>
+
+<a class="whatsapp-float" href="https://wa.me/966553860799" target="_blank" aria-label="واتساب">
+  <i class="fab fa-whatsapp"></i>
+</a>
+</main>
+
+<footer>
+  <div class="footer-brand">دار الفنون</div>
+  <p> الإبداع والجودة والتميز</p>
+  <p>إدارة الوكالة: سعيد دياب</p>
+  <p>Dar Alfonoon © All Rights Reserved 2026</p>
+</footer>
+
+<script>
+
+// تكبير صور المعرض عند الضغط عليها
+document.querySelectorAll('.gallery-grid img').forEach(function(img) {
+  img.addEventListener('click', function() {
+    document.getElementById('lightbox-image').src = this.src;
+    document.getElementById('lightbox').style.display = 'flex';
+  });
+});
+
+// إغلاق الصورة المكبرة
+function closeLightbox() {
+  document.getElementById('lightbox').style.display = 'none';
+}
+
+// إغلاق الصورة بزر Escape
+document.addEventListener('keydown', function(event) {
+  if (event.key === 'Escape') {
+    closeLightbox();
+  }
+});
+
+// الوضع الليلي والنهاري
+function toggleTheme() {
+  document.body.classList.toggle('light');
+
+  const icon = document.querySelector('.nav-actions .icon-btn:nth-child(2) i');
+
+  if (document.body.classList.contains('light')) {
+    icon.className = 'fas fa-sun';
+  } else {
+    icon.className = 'fas fa-moon';
+  }
+}
+
+// تغيير اللغة
+let currentLanguage = 'ar';
+
+function toggleLanguage() {
+  if (currentLanguage === 'ar') {
+    currentLanguage = 'en';
+    document.documentElement.lang = 'en';
+    document.documentElement.dir = 'ltr';
+
+    document.querySelector('title').textContent = 'Dar Alfonoon | Advertising';
+
+    document.querySelector('nav').innerHTML = `
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#gallery">Portfolio</a>
+      <a href="#contact">Contact</a>
+    `;
+
+    document.querySelector('.hero h1').innerHTML =
+      'We Turn Your Ideas Into <span>Visible Creativity</span>';
+
+    document.querySelector('.hero p').textContent =
+      'At Dar Alfonoon, we create advertising, printing and signage solutions with distinctive designs and attention to detail.';
+
+    document.querySelector('.section-heading h2').textContent =
+      'Our Story, Creativity Starts Here';
+
+  } else {
+    location.reload();
+  }
+}
+
+</script>
+
+</body>
+</html>
